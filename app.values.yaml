@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: docker.io/istio/examples-helloworld-v1
+        image: pavansa/hello-world-mean-stack:tagname
         resources:
           requests:
             cpu: "100m"
