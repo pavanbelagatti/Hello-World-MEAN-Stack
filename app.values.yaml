@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: signalsciences/example-helloworld:latest
+        image: pavansa/hello-world-mean-stack:latest
         imagePullPolicy: IfNotPresent
         args:
         # Address for the app to listen on
