@@ -7,3 +7,15 @@ steps:
   commands:
   - npm install
   - npm test
+  
+- name: docker  
+  image: plugins/docker
+  settings:
+    # registry: docker.io
+    repo: pavansa/hello-world-mean-stack
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: 
+      - latest
