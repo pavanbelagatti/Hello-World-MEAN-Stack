@@ -1,34 +1,20 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-hello-world
-  labels:
-    app: helloworld
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: helloworld
----
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: my-hello-world
-  labels:
-    app: helloworld
+    labels:
+        app: frontend
+    name: frontend
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: helloworld
-  template:
-    metadata:
-      labels:
-        app: helloworld
-    spec:
-      containers:
-      - name: my-hello-world
-        image: node:16-alpine
-        ports:
-        - containerPort: 80
+    replicas: 2
+    selector:
+        matchLabels:
+            app: frontend
+    template:
+        metadata:
+            labels:
+                app: frontend
+        spec:
+            containers:
+            - image: node:16-alpine
+              imagePullPolicy: IfNotPresent
+              name: frontend
