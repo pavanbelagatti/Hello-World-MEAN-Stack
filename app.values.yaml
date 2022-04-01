@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: pavansa/hello-world-mean-stack:latest
+        image: pavansa/hello-world-mean-stack
         resources:
           requests:
             cpu: "100m"
